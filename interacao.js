@@ -245,3 +245,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+const menu = document.querySelector("#menu");
+const botaoAbrirMenu = document.querySelector(".menu-toggle");
+const botaoFecharMenu = document.querySelector(".close-menu");
+
+function alternarMenu() {
+    const menuEstaAberto = menu.classList.toggle("aberto");
+
+    botaoAbrirMenu.setAttribute(
+        "aria-expanded",
+        String(menuEstaAberto)
+    );
+}
+
+botaoAbrirMenu.addEventListener("click", alternarMenu);
+botaoFecharMenu.addEventListener("click", alternarMenu);
+
+const titulosAcordeon = document.querySelectorAll(
+    ".acordeon-titulo"
+);
+
+titulosAcordeon.forEach((titulo) => {
+    titulo.addEventListener("click", () => {
+        const itemAtual = titulo.closest(".acordeon-item");
+        const acordeonAtual = itemAtual.closest(".acordeon");
+        const itemEstaAtivo = itemAtual.classList.contains("ativo");
+
+        acordeonAtual
+            .querySelectorAll(".acordeon-item")
+            .forEach((item) => {
+                item.classList.remove("ativo");
+
+                const botao = item.querySelector(
+                    ".acordeon-titulo"
+                );
+
+                botao.setAttribute("aria-expanded", "false");
+            });
+
+        if (!itemEstaAtivo) {
+            itemAtual.classList.add("ativo");
+            titulo.setAttribute("aria-expanded", "true");
+        }
+    });
+});
+
