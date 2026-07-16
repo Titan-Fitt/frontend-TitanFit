@@ -37,31 +37,39 @@
       <h2 class="titulo-login">Login</h2>
       <p>Bem-vindo de volta</p>
 
-      <form action="/login" method="POST">
+      <form id="form-login">
 
     <div class="caixa-login">
-        <label for="email">E-mail</label>
+        <label for="username-email">E-mail</label>
+
         <input
             type="email"
             name="email"
             id="username-email"
             placeholder="Digite seu e-mail"
-            >
+            
+        >
     </div>
 
     <div class="caixa-senha">
         <label for="senha">Senha</label>
+
         <input
             type="password"
             name="senha"
             id="senha"
             placeholder="Digite sua senha"
-          >
+            
+        >
     </div>
 
-    <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+    <a href="#" class="esqueci-senha">
+        Esqueci minha senha
+    </a>
 
-    <button class="botao-login"><a href="areaCliente.html">Continuar</a></button>
+    <button type="submit" class="botao-login"><a href="areaCliente.html">
+        Continuar</a>
+    </button>
 
     <button type="button" class="continuar-com">
         <img src="fotos/logo_goglee.png" alt="">
@@ -74,7 +82,10 @@
     </button>
 
     <p class="sem-conta">Não tem conta?</p>
-    <a href="cadastro.html" class="cadastro">Cadastre-se</a>
+
+    <a href="cadastro.html" class="cadastro">
+        Cadastre-se
+    </a>
 
 </form>
     </div>
